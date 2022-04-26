@@ -1,0 +1,34 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_TinhChuViDaGiacModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+<body>
+    <div>
+
+        <form method="POST">
+        <label for="ChuoiDaGiac">Nhap da giac</label> <br />
+        <input type="text"  name="ChuoiDaGiac" value=@Model.ChuoiDaGiac /> <br />
+        <input type="submit" value="Tinh chu vi" />
+        </form>
+    </div>    
+    <table>
+        <tr>
+            <th>X</th>
+            <th>Y</th>
+        </tr>
+        <!-- null reference exception: con sai-->
+        @foreach(DIEM diem in Model.d.DanhSachDinh)
+          {
+                <tr>
+                <td>@diem.x</td>
+                <td>@diem.y</td>
+                </tr>
+           }
+    </table>
+    <div>@Model.Chuoi</div>
+    
+    
+
+</body>
+
+

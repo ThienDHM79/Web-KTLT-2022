@@ -1,0 +1,24 @@
+﻿@page
+@model Web_KTLT_2022.Pages.AprMH_TaoSanPhamModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@using Web_KTLT_2022.DA;
+@{
+    //loi ko co not set instance
+    // dsSanPham.Add(s)
+    //  -> file json nhap [] va save=->ok
+ }
+    <body>
+    <h2> Nhap san pham: </h2>
+    <form method="POST">
+    <label for="masp"> Nhap Ma San Pham: </label> <br />
+    <input type="text" id="ma" name="masp" value="" /> <br />
+    <label for="tensp">Nhap ten san pham: </label><br />
+    <input type="text" id="ten" name="tensp" value= "" /> <br />
+    <label for="giasp">Nhap gia san pham: </label><br />
+        <input type="text" id="gia" name="giasp" value= "" /> <br />
+    <input type="submit" value="Luu" />
+    </form>
+    <h2>@Model.Chuoi</h2>
+</body>
+

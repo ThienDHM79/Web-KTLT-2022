@@ -1,0 +1,36 @@
+﻿@page
+@model Web_KTLT_2022.Pages.Shared.mypageModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+    int t1 = 100;
+    var t2 = 3.4;
+}
+<html>
+    <body>
+    @{
+        int a = 1;
+        int b = 1;
+        if(Request.HasFormContentType)
+        {
+            a = int.Parse(Request.Form["bienA"]);
+            b = int.Parse(Request.Form["bienB"]);
+
+        }
+        int s = XulySoNguyen.TinhTong(a, b);
+        string Chuoi = "ket qua la : "+s;
+        string currentTime = $"Current time is {DateTime.Now}";
+    }
+    <h2> HTML Form</h2>
+    <form method="POST">
+    <label for="fname"> Nhap A: </label> <br />
+    <input type="text" id="fname" name="bienA" value="10" /> <br />
+    <label for="lname">Nhap B: </label><br />
+    <input type="text" id="lname" name="bienB" value= "300" /> <br />
+    <input type="submit" value="Luu" />
+    </form>
+    <h2> @Chuoi</h2>
+    <h3> @currentTime</h3>
+</body>
+</html>
+

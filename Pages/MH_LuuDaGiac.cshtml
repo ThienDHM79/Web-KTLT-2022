@@ -1,0 +1,31 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_LuuTamGiacModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+
+    string Chuoi = string.Empty;
+    if(Request.HasFormContentType)
+    {
+        string chuoiDinh = Request.Form["dinh"];
+        DAGIAC d = XuliDaGiac.KhoiTao(chuoiDinh);
+        bool kq = XuliDaGiac.LuuDaGiac(d);
+        Chuoi = $"ket qua luu la {kq}";
+    }
+
+}
+<html>
+    <body>
+    <div>
+
+        <form method="POST">
+        <label for="fname">Nhap cac dinh</label> <br />
+        <input type="text"  name="dinh" value="(4,5)|(1,6)|(3,7)|(4,1)" /> <br />
+        <input type="submit" value="Luu" />
+        </form>
+    </div>    
+    <h2> @Chuoi</h2>
+</body>
+</html>
+
+

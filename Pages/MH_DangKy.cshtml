@@ -1,0 +1,22 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_DangKyModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@using Web_KTLT_2022.DA;
+@{
+   
+ }
+    <body>
+    <h2> Dang ky: </h2>
+    <form method="POST">
+    <label for="username"> Nhap username: </label> <br />
+    <input type="text" id="ma" name="username" value="" /> <br />
+    <label for="password">Nhap mat khau: </label><br />
+    <input type="text" id="ten" name="password" value= "" /> <br />
+    <label for="fullname">Nhap ten day du: </label><br />
+        <input type="text" id="gia" name="fullname" value= "" /> <br />
+    <input type="submit" value="Dang Ky" />
+    </form>
+    <h2>@Model.Chuoi</h2>
+</body>
+

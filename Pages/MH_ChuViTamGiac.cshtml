@@ -1,0 +1,41 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_ChuViTamGiacModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+    string Chuoi = string.Empty;
+    //con error chua chay
+}
+
+    <body>
+    <div>
+        <h2> Tinh chu vi</h2>
+
+        <form method="POST">
+        <label style="font-size:4ch">Nhap diem 1</label> <br />
+        <label for="Ax"> Nhap A[x]: </label> <br />
+        <input type="text"  name="Ax" value=@Model.t.A.x> <br />
+        <label for="Ay">Nhap A[y]: </label><br />
+        <input type="text" name="Ay" value= @Model.t.A.y> <br />
+        
+        <label style="font-size:4ch">Nhap diem 2</label> <br />
+
+        <label for="Bx"> Nhap Bx </label> <br />
+        <input type="text" name="Bx" value=@Model.t.B.x> <br />
+        <label for="By">Nhap By </label><br />
+        <input type="text" name="By" value=@Model.t.B.y /> <br />
+
+        <label style="font-size:4ch">Nhap diem 3</label> <br />
+
+        <label for="Cx"> Nhap Cx </label> <br />
+        <input type="text" name="Cx" value=@Model.t.C.x> <br />
+        <label for="Cy">Nhap Cy </label><br />
+        <input type="text" name="Cy" value=@Model.t.C.y> <br />
+        <input type="submit" value="Tinh chu vi" />
+        </form>
+    </div>    
+    <h2> @Model.Chuoi</h2>
+</body>
+
+
+

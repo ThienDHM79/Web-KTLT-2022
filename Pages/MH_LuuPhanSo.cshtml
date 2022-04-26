@@ -1,0 +1,40 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_LuuPhanSoModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+
+    string Chuoi = string.Empty;
+    PHANSO a;
+    a.TuSo = 1;
+    a.MauSo = 2;
+    if(Request.HasFormContentType)
+    {
+        a.TuSo = int.Parse(Request.Form["tuA"]);
+        a.MauSo = int.Parse(Request.Form["mauA"]);
+        bool kq = XuliPhanSo.LuuPhanSo(a);
+        Chuoi = $"{kq}";
+    }
+    string currentTime = $"Current time is {DateTime.Now}";
+
+}
+<html>
+    <body>
+    <div>
+        <h2> Luu Phan so</h2>
+
+        <form method="POST">
+        <label style="font-size:4ch">Nhap phan so thu 1</label> <br />
+        <label for="tuA"> Nhap Tu so cua A: </label> <br />
+        <input type="text" id="tuA" name="tuA" value="1" /> <br />
+        <label for="mauA">Nhap Mau so cua A: </label><br />
+        <input type="text" id="mauA" name="mauA" value= "1" /> <br />
+        <input type="submit" value="Luu" />
+        </form>
+    </div>    
+    <h2> @Chuoi</h2>
+    <h3>@currentTime</h3>
+</body>
+</html>
+
+

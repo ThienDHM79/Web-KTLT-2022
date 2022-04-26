@@ -1,0 +1,56 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_LuuTamGiacModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+
+    string Chuoi = string.Empty;
+    if(Request.HasFormContentType)
+    {
+        TAMGIAC t;
+        t.A.x = int.Parse(Request.Form["Ax"]);
+        t.A.y = int.Parse(Request.Form["Ay"]);
+        t.B.x = int.Parse(Request.Form["Bx"]);
+        t.B.y = int.Parse(Request.Form["By"]);
+        t.C.x = int.Parse(Request.Form["Cx"]);
+        t.C.y = int.Parse(Request.Form["Cy"]);
+
+        bool kq = XuliTamGiac.LuuTamGiac(t);
+        Chuoi = $"ket qua luu la {kq}";
+    }
+    string currentTime = $"Current time is {DateTime.Now}";
+
+}
+<html>
+    <body>
+    <div>
+
+        <form method="POST">
+        <label style="font-size:4ch">Nhap diem 1</label> <br />
+        <label for="Ax"> Nhap A[x]: </label> <br />
+        <input type="number"  name="Ax" value="1" /> <br />
+        <label for="Ay">Nhap A[y]: </label><br />
+        <input type="number" name="Ay" value= "1" /> <br />
+        
+        <label style="font-size:4ch">Nhap diem 2</label> <br />
+
+        <label for="Bx"> Nhap Bx </label> <br />
+        <input type="number" name="Bx" value="1" /> <br />
+        <label for="By">Nhap By </label><br />
+        <input type="number" name="By" value= "1" /> <br />
+
+        <label style="font-size:4ch">Nhap diem 3</label> <br />
+
+        <label for="Cx"> Nhap Cx </label> <br />
+        <input type="number" name="Cx" value="1" /> <br />
+        <label for="Cy">Nhap Cy </label><br />
+        <input type="number" name="Cy" value= "1" /> <br />
+        <input type="submit" value="Tinh" />
+        </form>
+    </div>    
+    <h2> @Chuoi</h2>
+    <h3>@currentTime</h3>
+</body>
+</html>
+
+

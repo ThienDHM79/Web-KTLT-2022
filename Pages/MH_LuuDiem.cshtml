@@ -1,0 +1,40 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_LuuDiemModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+
+    string Chuoi = string.Empty;
+    DIEM a;
+    a.x = 1;
+    a.y = 2;
+    if(Request.HasFormContentType)
+    {
+        a.x = int.Parse(Request.Form["Ax"]);
+        a.y = int.Parse(Request.Form["Ay"]);
+        bool kq = XuliDiem.LuuDiem(a);
+        Chuoi = $"{kq}";
+    }
+    string currentTime = $"Current time is {DateTime.Now}";
+
+}
+<html>
+    <body>
+    <div>
+        <h2> Luu diem</h2>
+
+        <form method="POST">
+        <label style="font-size:4ch">Nhap diem 1</label> <br />
+        <label for="Ax"> Nhap Ax: </label> <br />
+        <input type="text" id="tuA" name="Ax" value="1" /> <br />
+        <label for="Ay">Nhap Ay: </label><br />
+        <input type="text" id="mauA" name="Ay" value= "1" /> <br />
+        <input type="submit" value="Luu" />
+        </form>
+    </div>    
+    <h2> @Chuoi</h2>
+    <h3>@currentTime</h3>
+</body>
+</html>
+
+

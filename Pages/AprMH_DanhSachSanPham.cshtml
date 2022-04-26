@@ -1,0 +1,33 @@
+﻿@page
+@model Web_KTLT_2022.Pages.AprMH_DanhSachSanPhamModel
+@using Web_KTLT_2022.Entities
+    <body>
+    
+    <h2> Nhap san pham: </h2>
+    <form method="POST">
+    <label for="tukhoa"> Nhap tu khoa tim kiem: </label> <br />
+    <input type="text" id="ma" name="tukhoa" value="" /> <br />
+    <input type="submit" value="Tim Kiem" />
+    </form>
+    <table>
+        <tr>
+            <th> Ma san pham</th>
+            <th> Ten</th>
+            <th> Gia</th>
+            <th></th>
+        </tr>
+        @foreach( SanPham sp in Model.dsSanPham)
+        {
+            <tr>
+                <td>@sp.MaSanPham</td>
+                <td>@sp.TenSanPham</td>
+                <td>@sp.Gia</td>
+                <td>
+                    <a href="/AprMH_XoaSanPham?id=@sp.MaSanPham">Xoa</a>
+                    <a href="/AprMH_SuaSanPham?id=@sp.MaSanPham">Sua</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+

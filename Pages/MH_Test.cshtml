@@ -1,0 +1,17 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_TestModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+
+<div>
+    man hinh test @Model.Chuoi
+    <br /> a la @Model.A
+</div>
+<form method="post">
+    <label for="fname"> Nhap x: </label> <br />
+    <input type="text" name="x" value="@Model.A" /> <br />
+    <input type="submit" value="Tinh" />
+</form>
+
+
+

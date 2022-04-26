@@ -1,0 +1,46 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_PhansoModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+    
+    string Chuoi = string.Empty;
+    if(Request.HasFormContentType)
+    {
+        PHANSO a,b;
+        a.TuSo = int.Parse(Request.Form["tuA"]);
+        a.MauSo = int.Parse(Request.Form["mauA"]);
+        b.TuSo = int.Parse(Request.Form["tuB"]);
+        b.MauSo= int.Parse(Request.Form["mauB"]);
+        PHANSO kq = XuliPhanSo.Tong2PhanSo(a, b);
+        Chuoi = $"Ket qua la {kq.TuSo}/{kq.MauSo}";
+    }
+    string currentTime = $"Current time is {DateTime.Now}";
+
+}
+<html>
+    <body>
+    <div>
+        <h2> Tinh tong Phan so</h2>
+
+        <form method="POST">
+        <label style="font-size:4ch">Nhap phan so thu 1</label> <br />
+        <label for="tuA"> Nhap Tu so cua A: </label> <br />
+        <input type="text" id="tuA" name="tuA" value="1" /> <br />
+        <label for="mauA">Nhap Mau so cua A: </label><br />
+        <input type="text" id="mauA" name="mauA" value= "1" /> <br />
+        
+        <label style="font-size:4ch">Nhap phan so thu 2</label> <br />
+
+        <label for="tuB"> Nhap Tu so cua B: </label> <br />
+        <input type="text" id="tuB" name="tuB" value="1" /> <br />
+        <label for="mauB">Nhap Mau so cua B: </label><br />
+        <input type="text" id="mauB" name="mauB" value= "1" /> <br />
+        <input type="submit" value="Luu" />
+        </form>
+    </div>    
+    <h2> @Chuoi</h2>
+</body>
+</html>
+
+

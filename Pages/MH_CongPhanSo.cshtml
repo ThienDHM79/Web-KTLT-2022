@@ -1,0 +1,34 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_CongPhansoModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+    
+
+}
+ <body>
+    <div>
+        <h2> Tinh tong Phan so</h2>
+
+        <form method="POST">
+        <label style="font-size:4ch">Nhap phan so thu 1</label> <br />
+        <label for="tuA"> Nhap Tu so cua A: </label> <br />
+        <input type="text" id="tuA" name="tuA" value="@Model.tuA" /> <br />
+        <label for="mauA">Nhap Mau so cua A: </label><br />
+        <input type="text" id="mauA" name="mauA" value= "@Model.mauA" /> <br />
+        
+        <label style="font-size:4ch">Nhap phan so thu 2</label> <br />
+
+        <label for="tuB"> Nhap Tu so cua B: </label> <br />
+        <input type="text" id="tuB" name="tuB" value="@Model.tuB" /> <br />
+        <label for="mauB">Nhap Mau so cua B: </label><br />
+        <input type="text" id="mauB" name="mauB" value= "@Model.mauB" /> <br />
+        <input type="submit" value="Luu" />
+        </form>
+    </div> 
+    <div>
+        Ket qua cong 2 phan so la @Model.Chuoi
+    </div>
+</body>
+
+

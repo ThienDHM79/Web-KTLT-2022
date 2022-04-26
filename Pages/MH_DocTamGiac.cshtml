@@ -1,0 +1,21 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_DocTamGiacModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+
+    string Chuoi = string.Empty;
+    TAMGIAC t;
+    t = XuliTamGiac.DocTamGiac();
+    Chuoi= $"ket qua la diem A ({t.A.x},{t.A.y}),B({t.B.x},{t.B.y}) , C({t.C.x},{t.C.y})";
+
+
+}
+<html>
+    <body>
+    
+    <h2> @Chuoi</h2>
+</body>
+</html>
+
+

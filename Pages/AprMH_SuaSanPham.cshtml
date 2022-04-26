@@ -1,0 +1,20 @@
+﻿@page
+@model Web_KTLT_2022.Pages.AprMH_SuaSanPhamModel
+@using Web_KTLT_2022.Entities
+@if(Model.coSanPham)
+{
+    <body>
+    <h2> Nhap thong tin can sua: </h2>
+    <h3> @Model.SanPham.MaSanPham</h3>
+    <form method="POST">
+    <label for="masp">Ten san pham</label>
+    <input type="text" id="ma" name="tensp" value="@Model.SanPham.TenSanPham" /> <br />
+    <label for="masp">Gia San Pham</label>
+    <input type="text" id="ma" name="giasp" value="@Model.SanPham.Gia" /> <br />
+
+    <input type="submit" value="Sua" />
+    </form>
+    <h2>@Model.Chuoi</h2>
+</body>
+}
+

@@ -1,0 +1,26 @@
+﻿@page
+@model Web_KTLT_2022.Pages.MH_DocDiemModel
+@using Web_KTLT_2022.Entities
+@using Web_KTLT_2022.Services
+@{
+
+    string Chuoi = string.Empty;
+    DIEM a;
+    a.x = 1;
+    a.y = 2;
+    a = XuliDiem.DocDiem();
+    Chuoi = $"ket qua luu la ({a.x}, {a.y})";
+
+}
+
+    <body>    
+    <h2> @Chuoi</h2>
+    @section Scripts
+    {
+        <div> add in part</div>
+    }
+</body>
+
+
+
+

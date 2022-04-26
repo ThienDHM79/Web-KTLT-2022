@@ -1,0 +1,26 @@
+﻿@page
+@model Web_KTLT_2022.Pages.AprMH_XoaSanPhamModel
+@using Web_KTLT_2022.Entities
+@if (Model.coSanPham)
+{
+    <body>
+    <table>
+        <tr>
+            <th>Ma San Pham</th>
+            <th>Ten San Pham</th>
+            <th>Gia</th>
+        </tr>
+        <tr>
+            <td>@Model.SanPham.MaSanPham</td>
+            <td>@Model.SanPham.TenSanPham</td>
+            <td>@Model.SanPham.Gia</td>
+        </tr>
+    </table>
+    <form method="post">
+        <div> Ban co muon xoa @Model.SanPham.TenSanPham</div>
+        <input type="submit" value="Xoa">
+    </form>
+    <h2>@Model.Chuoi</h2>
+</body>
+}
+
